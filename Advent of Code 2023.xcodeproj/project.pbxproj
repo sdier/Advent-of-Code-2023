@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		41EBEB5F2B1AA1CC00D2E9A3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EBEB5E2B1AA1CC00D2E9A3 /* main.swift */; };
+		41EBEB6D2B1AA28C00D2E9A3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EBEB6C2B1AA28C00D2E9A3 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		41EBEB592B1AA1CC00D2E9A3 /* CopyFiles */ = {
+		41EBEB682B1AA28C00D2E9A3 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -23,12 +23,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		41EBEB5B2B1AA1CC00D2E9A3 /* Advent of Code 2023 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Advent of Code 2023"; sourceTree = BUILT_PRODUCTS_DIR; };
-		41EBEB5E2B1AA1CC00D2E9A3 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		41EBEB6A2B1AA28C00D2E9A3 /* Day 1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Day 1"; sourceTree = BUILT_PRODUCTS_DIR; };
+		41EBEB6C2B1AA28C00D2E9A3 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		41EBEB582B1AA1CC00D2E9A3 /* Frameworks */ = {
+		41EBEB672B1AA28C00D2E9A3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,7 +41,7 @@
 		41EBEB522B1AA1CC00D2E9A3 = {
 			isa = PBXGroup;
 			children = (
-				41EBEB5D2B1AA1CC00D2E9A3 /* Advent of Code 2023 */,
+				41EBEB6B2B1AA28C00D2E9A3 /* Day 1 */,
 				41EBEB5C2B1AA1CC00D2E9A3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,37 +49,37 @@
 		41EBEB5C2B1AA1CC00D2E9A3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				41EBEB5B2B1AA1CC00D2E9A3 /* Advent of Code 2023 */,
+				41EBEB6A2B1AA28C00D2E9A3 /* Day 1 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		41EBEB5D2B1AA1CC00D2E9A3 /* Advent of Code 2023 */ = {
+		41EBEB6B2B1AA28C00D2E9A3 /* Day 1 */ = {
 			isa = PBXGroup;
 			children = (
-				41EBEB5E2B1AA1CC00D2E9A3 /* main.swift */,
+				41EBEB6C2B1AA28C00D2E9A3 /* main.swift */,
 			);
-			path = "Advent of Code 2023";
+			path = "Day 1";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		41EBEB5A2B1AA1CC00D2E9A3 /* Advent of Code 2023 */ = {
+		41EBEB692B1AA28C00D2E9A3 /* Day 1 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 41EBEB622B1AA1CC00D2E9A3 /* Build configuration list for PBXNativeTarget "Advent of Code 2023" */;
+			buildConfigurationList = 41EBEB6E2B1AA28C00D2E9A3 /* Build configuration list for PBXNativeTarget "Day 1" */;
 			buildPhases = (
-				41EBEB572B1AA1CC00D2E9A3 /* Sources */,
-				41EBEB582B1AA1CC00D2E9A3 /* Frameworks */,
-				41EBEB592B1AA1CC00D2E9A3 /* CopyFiles */,
+				41EBEB662B1AA28C00D2E9A3 /* Sources */,
+				41EBEB672B1AA28C00D2E9A3 /* Frameworks */,
+				41EBEB682B1AA28C00D2E9A3 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Advent of Code 2023";
-			productName = "Advent of Code 2023";
-			productReference = 41EBEB5B2B1AA1CC00D2E9A3 /* Advent of Code 2023 */;
+			name = "Day 1";
+			productName = "Day 1";
+			productReference = 41EBEB6A2B1AA28C00D2E9A3 /* Day 1 */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -92,7 +92,7 @@
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					41EBEB5A2B1AA1CC00D2E9A3 = {
+					41EBEB692B1AA28C00D2E9A3 = {
 						CreatedOnToolsVersion = 15.0.1;
 					};
 				};
@@ -110,17 +110,17 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				41EBEB5A2B1AA1CC00D2E9A3 /* Advent of Code 2023 */,
+				41EBEB692B1AA28C00D2E9A3 /* Day 1 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		41EBEB572B1AA1CC00D2E9A3 /* Sources */ = {
+		41EBEB662B1AA28C00D2E9A3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41EBEB5F2B1AA1CC00D2E9A3 /* main.swift in Sources */,
+				41EBEB6D2B1AA28C00D2E9A3 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,7 +245,7 @@
 			};
 			name = Release;
 		};
-		41EBEB632B1AA1CC00D2E9A3 /* Debug */ = {
+		41EBEB6F2B1AA28C00D2E9A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -254,7 +254,7 @@
 			};
 			name = Debug;
 		};
-		41EBEB642B1AA1CC00D2E9A3 /* Release */ = {
+		41EBEB702B1AA28C00D2E9A3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -275,11 +275,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		41EBEB622B1AA1CC00D2E9A3 /* Build configuration list for PBXNativeTarget "Advent of Code 2023" */ = {
+		41EBEB6E2B1AA28C00D2E9A3 /* Build configuration list for PBXNativeTarget "Day 1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				41EBEB632B1AA1CC00D2E9A3 /* Debug */,
-				41EBEB642B1AA1CC00D2E9A3 /* Release */,
+				41EBEB6F2B1AA28C00D2E9A3 /* Debug */,
+				41EBEB702B1AA28C00D2E9A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
