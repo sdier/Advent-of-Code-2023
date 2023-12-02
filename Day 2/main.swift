@@ -35,8 +35,21 @@ let gameFilter = [
 ]
 
 var gameScore = 0
+var totalPwr = 0
+
 gameLoop: for game in gameList {
     let gameIdx = game.key
+    let gamePwr = game.value.reduce(into: [String: Int]()) {
+        for result in $1 {
+            if $0[result.key, default: 0] < result.value {
+                $0[result.key] = result.value
+            }
+        }
+    }.reduce(into: Int(1)) {
+        $0 = $1.value * $0
+    }
+    totalPwr += gamePwr
+
     for result in game.value {
         for filter in gameFilter {
             if result.keys.contains(filter.key) && result[filter.key]! > filter.value {
@@ -47,4 +60,5 @@ gameLoop: for game in gameList {
     gameScore += gameIdx
 }
 
+print(totalPwr)
 print(gameScore)
