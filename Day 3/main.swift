@@ -46,10 +46,12 @@ let directions : [Directions : Coordinate] = [
 ]
 
 var partNumTotal = 0
+var gearRatios : [String: [Int]] = [:]
 
 for (lineY, row) in input.enumerated() {
     var curNum = ""
     var symbolSeen = false
+    var starCoord = ""
     for (charX, space) in row.enumerated() {
         switch space {
         case let c where c.isNumber:
@@ -65,6 +67,9 @@ for (lineY, row) in input.enumerated() {
                 switch input[lookY][lookX] {
                 case let c where c.isNumber || c == ".":
                     continue
+                case "*":
+                    starCoord = String(lookY) + "," + String(lookX)
+                    fallthrough
                 default:
                     symbolSeen = true
                 }
@@ -76,7 +81,11 @@ for (lineY, row) in input.enumerated() {
                 continue
             }
             partNumTotal += Int(curNum)!
+            if starCoord != "" {
+                gearRatios[starCoord, default: []].append(Int(curNum)!)
+            }
             curNum = ""
+            starCoord = ""
             symbolSeen = false
         }
     }
@@ -84,7 +93,17 @@ for (lineY, row) in input.enumerated() {
     if curNum == "" || !symbolSeen {
         continue
     }
+    // Do this sort of tail work as a function next time, when I wrote part 2 I forgot to add the additional action.
     partNumTotal += Int(curNum)!
+    if starCoord != "" {
+        gearRatios[starCoord, default: []].append(Int(curNum)!)
+    }
 }
 
 print(partNumTotal)
+
+print(gearRatios.reduce(into: Int(0)) {
+    if $1.value.count == 2 {
+        $0 += $1.value[0] * $1.value[1]
+    }
+})
