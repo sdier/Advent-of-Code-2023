@@ -17,7 +17,6 @@ Card 5: 87 83 26 28 32 | 88 30 70 12 93 22 82 36
 Card 6: 31 18 13 56 72 | 74 77 10 23 35 67 36 11
 """.components(separatedBy: .newlines).map({$0.components(separatedBy: ": ")})
 
-
 let gameList = Dictionary(uniqueKeysWithValues: input.lazy.map(
     {
         (Int($0[0].components(separatedBy: .whitespaces).last!)!,
@@ -27,21 +26,35 @@ let gameList = Dictionary(uniqueKeysWithValues: input.lazy.map(
     }
 ))
 
-print(gameList)
+// print(gameList)
 
 var totalScore : Decimal = 0
+var cards : [Int: Int] = [:]
 
-for game in gameList {
+for game in gameList.sorted(by: {$0.key < $1.key}) {
     var score = -1
+    // every card counts for itself
+    cards[game.key, default: 0] += 1
     for (winner, found) in product(game.value[0], game.value[1]) {
         if winner == found {
             score += 1
         }
     }
     if score >= 0 {
+        print(game.key, score+1)
         totalScore += pow(2, score)
+        var cardInc = 1
+        while cardInc <= score + 1 {
+            cards[game.key+cardInc, default: 0] += cards[game.key]!
+            cardInc += 1
+        }
     }
 }
 
+print(cards.sorted(by: {$0.key < $1.key}))
+
 print(totalScore)
+print(cards.reduce(into: Int(0)) {
+    $0 += $1.value
+})
 
