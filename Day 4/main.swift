@@ -21,7 +21,7 @@ let gameList = Dictionary(uniqueKeysWithValues: input.lazy.map(
     {
         (Int($0[0].components(separatedBy: .whitespaces).last!)!,
          $0[1].components(separatedBy: " | ")
-            .map({$0.components(separatedBy: .whitespaces).filter({$0 != ""})})
+            .map({Set($0.components(separatedBy: .whitespaces).filter({$0 != ""}))})
         )
     }
 ))
@@ -33,7 +33,7 @@ var totalScore : Decimal = 0
 var cards : [Int] = Array(repeating: 1, count: gameList.count)
 
 for game in gameList.sorted(by: {$0.key < $1.key}) {
-    let score = Set(game.value[0]).intersection(Set(game.value[1])).count
+    let score = game.value[0].intersection(game.value[1]).count
     if score > 0 {
         print(game.key, score)
         totalScore += pow(2, score - 1)
