@@ -29,32 +29,26 @@ let gameList = Dictionary(uniqueKeysWithValues: input.lazy.map(
 // print(gameList)
 
 var totalScore : Decimal = 0
-var cards : [Int: Int] = [:]
+// every card counts for itself
+var cards : [Int] = Array(repeating: 1, count: gameList.count)
 
 for game in gameList.sorted(by: {$0.key < $1.key}) {
-    var score = -1
-    // every card counts for itself
-    cards[game.key, default: 0] += 1
-    for (winner, found) in product(game.value[0], game.value[1]) {
-        if winner == found {
-            score += 1
-        }
-    }
-    if score >= 0 {
-        print(game.key, score+1)
-        totalScore += pow(2, score)
+    let score = Set(game.value[0]).intersection(Set(game.value[1])).count
+    if score > 0 {
+        print(game.key, score)
+        totalScore += pow(2, score - 1)
         var cardInc = 1
-        while cardInc <= score + 1 {
-            cards[game.key+cardInc, default: 0] += cards[game.key]!
+        while cardInc <= score {
+            cards[game.key+cardInc] += cards[game.key]
             cardInc += 1
         }
     }
 }
 
-print(cards.sorted(by: {$0.key < $1.key}))
+print(cards)
 
 print(totalScore)
 print(cards.reduce(into: Int(0)) {
-    $0 += $1.value
+    $0 += $1
 })
 
