@@ -6,14 +6,11 @@
 //
 
 import Foundation
-import Algorithms
 
 typealias Race = (time: Int, distance: Int)
 
 let races : [Race] = [
-    (time: 7, distance: 9),
-    (time: 15, distance: 40),
-    (time: 30, distance: 200)
+    (time: 71530, distance: 940200),
 ]
 
 var raceMult = 1
