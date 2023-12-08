@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		412AE21D2B1F34B50086AEED /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412AE21C2B1F34B50086AEED /* main.swift */; };
+		417964452B201C8C0098A8E9 /* SE0270_RangeSet in Frameworks */ = {isa = PBXBuildFile; productRef = 417964442B201C8C0098A8E9 /* SE0270_RangeSet */; };
 		41C7BDD32B1B2B6E002A1F1B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C7BDD22B1B2B6E002A1F1B /* main.swift */; };
 		41C7BDDE2B1C8CCE002A1F1B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C7BDDD2B1C8CCE002A1F1B /* main.swift */; };
 		41CA9AEB2B1DD01F00268654 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CA9AEA2B1DD01F00268654 /* main.swift */; };
@@ -81,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				417964452B201C8C0098A8E9 /* SE0270_RangeSet in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,6 +206,9 @@
 			dependencies = (
 			);
 			name = "Day 5";
+			packageProductDependencies = (
+				417964442B201C8C0098A8E9 /* SE0270_RangeSet */,
+			);
 			productName = "Day 5";
 			productReference = 412AE21A2B1F34B50086AEED /* Day 5 */;
 			productType = "com.apple.product-type.tool";
@@ -320,6 +325,7 @@
 			packageReferences = (
 				416B50CD2B1CF21000C39077 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
 				416B50D02B1CF31000C39077 /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
+				417964432B201C8C0098A8E9 /* XCRemoteSwiftPackageReference "swift-se0270-range-set" */,
 			);
 			productRefGroup = 41EBEB5C2B1AA1CC00D2E9A3 /* Products */;
 			projectDirPath = "";
@@ -662,9 +668,22 @@
 				minimumVersion = 1.2.3;
 			};
 		};
+		417964432B201C8C0098A8E9 /* XCRemoteSwiftPackageReference "swift-se0270-range-set" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-se0270-range-set";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		417964442B201C8C0098A8E9 /* SE0270_RangeSet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 417964432B201C8C0098A8E9 /* XCRemoteSwiftPackageReference "swift-se0270-range-set" */;
+			productName = SE0270_RangeSet;
+		};
 		41CA9AF02B1DD34500268654 /* Algorithms */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 416B50CD2B1CF21000C39077 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
