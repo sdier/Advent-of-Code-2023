@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "euler",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/arguiot/Euler.git",
+      "state" : {
+        "revision" : "f54c76e1ccd64e73623c2f44deb6ff78a03fcb24",
+        "version" : "0.3.12"
+      }
+    },
+    {
       "identity" : "swift-algorithms",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-algorithms.git",

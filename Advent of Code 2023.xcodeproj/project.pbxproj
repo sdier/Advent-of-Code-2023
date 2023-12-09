@@ -13,6 +13,7 @@
 		4193EDD22B23891D00C8D67A /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 4193EDD12B23891D00C8D67A /* Algorithms */; };
 		4193EDDA2B239BF000C8D67A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4193EDD92B239BF000C8D67A /* main.swift */; };
 		4193EDE52B24872C00C8D67A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4193EDE42B24872C00C8D67A /* main.swift */; };
+		4193EDEB2B24E2AD00C8D67A /* Euler in Frameworks */ = {isa = PBXBuildFile; productRef = 4193EDEA2B24E2AD00C8D67A /* Euler */; };
 		41C7BDD32B1B2B6E002A1F1B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C7BDD22B1B2B6E002A1F1B /* main.swift */; };
 		41C7BDDE2B1C8CCE002A1F1B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C7BDDD2B1C8CCE002A1F1B /* main.swift */; };
 		41CA9AEB2B1DD01F00268654 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CA9AEA2B1DD01F00268654 /* main.swift */; };
@@ -142,6 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4193EDEB2B24E2AD00C8D67A /* Euler in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +354,9 @@
 			dependencies = (
 			);
 			name = "Day 8";
+			packageProductDependencies = (
+				4193EDEA2B24E2AD00C8D67A /* Euler */,
+			);
 			productName = "Day 8";
 			productReference = 4193EDE22B24872C00C8D67A /* Day 8 */;
 			productType = "com.apple.product-type.tool";
@@ -478,6 +483,7 @@
 				416B50CD2B1CF21000C39077 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
 				416B50D02B1CF31000C39077 /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
 				417964432B201C8C0098A8E9 /* XCRemoteSwiftPackageReference "swift-se0270-range-set" */,
+				4193EDE92B24E2AD00C8D67A /* XCRemoteSwiftPackageReference "Euler" */,
 			);
 			productRefGroup = 41EBEB5C2B1AA1CC00D2E9A3 /* Products */;
 			projectDirPath = "";
@@ -936,6 +942,14 @@
 				minimumVersion = 1.0.1;
 			};
 		};
+		4193EDE92B24E2AD00C8D67A /* XCRemoteSwiftPackageReference "Euler" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/arguiot/Euler.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.12;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -948,6 +962,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 416B50CD2B1CF21000C39077 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
 			productName = Algorithms;
+		};
+		4193EDEA2B24E2AD00C8D67A /* Euler */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4193EDE92B24E2AD00C8D67A /* XCRemoteSwiftPackageReference "Euler" */;
+			productName = Euler;
 		};
 		41CA9AF02B1DD34500268654 /* Algorithms */ = {
 			isa = XCSwiftPackageProductDependency;
