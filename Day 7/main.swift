@@ -21,7 +21,7 @@ QQQJA 483
         return Hand(x[0],Int(x[1])!)
     })
 
-let cardID : [Character] = ["2", "3", "4", "5", "6", "7", "8", "9", "T", "J", "Q", "K", "A"]
+let cardID : [Character] = ["J", "2", "3", "4", "5", "6", "7", "8", "9", "T", "Q", "K", "A"]
 
 var rankedHands : [Int: [Hand]] = [:]
 
@@ -33,25 +33,39 @@ for hand in input {
     }.reduce(into: [Int: [Int]]()) {
         $0[$1.value, default: []].append($1.key)
     }
-    //print(cardCount)
-    if (cardCount.keys.contains(5)) {
+    print(cardCount)
+    if (cardCount.keys.contains(5) || 
+        cardCount.keys.contains(4) && cardCount.keys.contains(1) && cardCount[1]!.contains(0) ||
+        cardCount.keys.contains(3) && cardCount.keys.contains(2) && cardCount[2]!.contains(0) ||
+        cardCount.keys.contains(2) && cardCount.keys.contains(3) && cardCount[3]!.contains(0) ||
+        cardCount.keys.contains(1) && cardCount.keys.contains(4) && cardCount[4]!.contains(0)) {
         rankedHands[6, default: []].append(hand)
-    } else if (cardCount.keys.contains(4)) {
+    } else if (cardCount.keys.contains(4) ||
+               cardCount.keys.contains(3) && cardCount.keys.contains(1) && cardCount[1]!.contains(0) ||
+               cardCount.keys.contains(2) && cardCount[2]!.count > 1 && cardCount[2]!.contains(0) ||
+               cardCount.keys.contains(1) && cardCount.keys.contains(3) && cardCount[3]!.contains(0)) {
         rankedHands[5, default: []].append(hand)
-    } else if (cardCount.keys.contains(3) && cardCount.keys.contains(2)) {
+    } else if (cardCount.keys.contains(3) && cardCount.keys.contains(2) ||
+               cardCount.keys.contains(2) && cardCount[2]!.count > 1 && cardCount.keys.contains(1) && cardCount[1]!.contains(0)) {
         rankedHands[4, default: []].append(hand)
-    } else if (cardCount.keys.contains(3)) {
+    } else if (cardCount.keys.contains(3) ||
+               cardCount.keys.contains(2) && cardCount.keys.contains(1) && cardCount[1]!.contains(0) ||
+               cardCount.keys.contains(1) && cardCount.keys.contains(2) && cardCount[2]!.contains(0)) {
         rankedHands[3, default: []].append(hand)
-    } else if (cardCount.keys.contains(2) && cardCount[2]!.count > 1) {
+    } else if (cardCount.keys.contains(2) && cardCount[2]!.count > 1 ||
+               cardCount.keys.contains(2) && cardCount.keys.contains(1) && cardCount[1]!.contains(0)) {
         rankedHands[2, default: []].append(hand)
-    } else if (cardCount.keys.contains(2)) {
+    } else if (cardCount.keys.contains(2) ||
+               cardCount.keys.contains(1) && cardCount[1]!.count > 1 && cardCount[1]!.contains(0)) {
         rankedHands[1, default: []].append(hand)
     } else {
         rankedHands[0, default: []].append(hand)
     }
 }
 
-//print(rankedHands.sorted(by: {$0.key < $1.key}))
+print("---")
+print(rankedHands.sorted(by: {$0.key < $1.key}))
+print("---")
 
 var finalRankedHands : [Hand] = []
 
