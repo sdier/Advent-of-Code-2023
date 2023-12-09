@@ -34,23 +34,40 @@ func nthForwardsDifference<T: SignedNumeric>(of arr: [T], n: Int) -> [T] {
 }
 
 var seqNext : [Int] = []
+var seqFirst : [Int] = []
 
 for seq in input {
     // What is this?
     var seqDiff = seq
     var seqHist : [Int] = [seq.last!]
+    var seqHistPrefix: [Int] = [seq.first!]
     var i = 1
     while !seqDiff.allSatisfy({$0 == seqDiff[0]}) {
         seqDiff = nthForwardsDifference(of: seq, n: i)
         seqHist.append(seqDiff.last!)
+        seqHistPrefix.append(seqDiff.first!)
         i += 1
     }
     // What is the next number?
     seqNext.append(seqHist.reduce(into: Int(0)) {
         $0 += $1
     })
+    
+    seqHistPrefix.reverse()
+    var seqPrefix : [Int] = [0]
+    for num in seqHistPrefix {
+        seqPrefix.append(num - seqPrefix.last!)
+    }
+
+    seqFirst.append(seqPrefix.last!)
 }
 
+print(seqNext)
+print(seqFirst)
+
 print(seqNext.reduce(into: Int()) {
+    $0 += $1
+})
+print(seqFirst.reduce(into: Int()) {
     $0 += $1
 })
