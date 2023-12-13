@@ -21,41 +21,40 @@ let input = """
 #...#.....
 """.components(separatedBy: .newlines).map({Array($0)})
 
-var map = input
+var increment = 1000000-1
 
 typealias Coordinate = (x: Int, y: Int)
 var galaxies : [Coordinate] = []
 
-var offset = 0
-
-for (idx, line) in map.enumerated() {
-    if line.allSatisfy({$0 == "."}) {
-        map.insert(line, at: idx + offset)
-        offset += 1
-    }
-}
-
-offset = 0
-for idx in 0..<map[0].count {
-    if map.reduce(into: [Character](), {
-        $0.append($1[idx+offset])
-    }).allSatisfy({$0 == "."}) {
-        for mapIdx in 0..<map.count {
-            map[mapIdx].insert(".", at: idx+offset)
-        }
-        offset += 1
-    }
-}
-
-print(map.reduce(into: "") {
-    $0 += String($1) + "\n"
-})
-
-for (idxY, line) in map.enumerated() {
+for (idxY, line) in input.enumerated() {
     for (idxX, char) in line.enumerated() {
         if char == "#" {
             galaxies.append((x: idxX, y: idxY))
         }
+    }
+}
+
+var offset = 0
+
+for (idx, line) in input.enumerated() {
+    if line.allSatisfy({$0 == "."}) {
+        // do stuff
+        for (galaxyIdx, galaxy) in galaxies.enumerated().filter({$0.element.y > (idx + offset)}) {
+            galaxies[galaxyIdx] = (x: galaxy.x, y: galaxy.y + increment)
+        }
+        offset += increment
+    }
+}
+
+offset = 0
+for idx in 0..<input[0].count {
+    if input.reduce(into: [Character](), {
+        $0.append($1[idx])
+    }).allSatisfy({$0 == "."}) {
+        for (galaxyIdx, galaxy) in galaxies.enumerated().filter({$0.element.x > (idx + offset)}) {
+            galaxies[galaxyIdx] = (x: galaxy.x + increment, y: galaxy.y)
+        }
+        offset += increment
     }
 }
 
