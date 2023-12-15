@@ -18,8 +18,8 @@ func d15hash(_ str: String) -> Int {
     for char in cArray {
         let a = Int(char.asciiValue!)
         cValue += a
-        cValue = cValue * 17
-        cValue = cValue % 256
+        cValue *= 17
+        cValue %= 256
     }
     return cValue
 }
