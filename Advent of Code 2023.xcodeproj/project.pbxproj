@@ -22,6 +22,7 @@
 		419845652B2BD4F7000E5AA9 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419845642B2BD4F7000E5AA9 /* main.swift */; };
 		419845702B2CBA10000E5AA9 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4198456F2B2CBA10000E5AA9 /* main.swift */; };
 		4198457B2B2D060E000E5AA9 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4198457A2B2D060E000E5AA9 /* main.swift */; };
+		419845812B2D0F3D000E5AA9 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 419845802B2D0F3D000E5AA9 /* OrderedCollections */; };
 		41C7BDD32B1B2B6E002A1F1B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C7BDD22B1B2B6E002A1F1B /* main.swift */; };
 		41C7BDDE2B1C8CCE002A1F1B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C7BDDD2B1C8CCE002A1F1B /* main.swift */; };
 		41CA9AEB2B1DD01F00268654 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CA9AEA2B1DD01F00268654 /* main.swift */; };
@@ -279,6 +280,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				419845812B2D0F3D000E5AA9 /* OrderedCollections in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -684,6 +686,9 @@
 			dependencies = (
 			);
 			name = "Day 15";
+			packageProductDependencies = (
+				419845802B2D0F3D000E5AA9 /* OrderedCollections */,
+			);
 			productName = "Day 15";
 			productReference = 419845782B2D060E000E5AA9 /* Day 15 */;
 			productType = "com.apple.product-type.tool";
@@ -832,6 +837,7 @@
 				416B50D02B1CF31000C39077 /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
 				417964432B201C8C0098A8E9 /* XCRemoteSwiftPackageReference "swift-se0270-range-set" */,
 				4193EDE92B24E2AD00C8D67A /* XCRemoteSwiftPackageReference "Euler" */,
+				4198457F2B2D0F21000E5AA9 /* XCRemoteSwiftPackageReference "swift-collections" */,
 			);
 			productRefGroup = 41EBEB5C2B1AA1CC00D2E9A3 /* Products */;
 			projectDirPath = "";
@@ -1586,6 +1592,14 @@
 				minimumVersion = 0.3.12;
 			};
 		};
+		4198457F2B2D0F21000E5AA9 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.5;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1608,6 +1622,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4193EDE92B24E2AD00C8D67A /* XCRemoteSwiftPackageReference "Euler" */;
 			productName = Euler;
+		};
+		419845802B2D0F3D000E5AA9 /* OrderedCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4198457F2B2D0F21000E5AA9 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = OrderedCollections;
 		};
 		41CA9AF02B1DD34500268654 /* Algorithms */ = {
 			isa = XCSwiftPackageProductDependency;
