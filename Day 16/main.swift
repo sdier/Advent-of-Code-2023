@@ -113,7 +113,27 @@ func shine(beam: Coordinate, direction: Directions) {
     }
 }
 
-shine(beam: (0,0), direction: .right)
+var maxEnergy = 0
 
-print(energy.reduce(into: "", {$0 += String($1) + "\n"}))
-print(energy.reduce(into: 0, { $0 += $1.reduce(into: 0, { if $1 == "#" { $0 += 1 }})}))
+var edges : [(x: Range<Int>, y: Range<Int>, direction: Directions)] = [
+    (0..<input[0].count, 0..<1, Directions.down),
+    ((input[0].count - 1)..<(input[0].count), 0..<input.count, Directions.left),
+    (0..<input[0].count, (input.count - 1)..<(input.count), Directions.up),
+    (0..<1, 0..<input.count, Directions.right)
+]
+
+for edge in edges {
+    for x in edge.x {
+        for y in edge.y {
+            energy = Array(repeating: Array(repeating: Character("."), count: input[0].count), count: input.count)
+            energyDir = Array(repeating: Array(repeating: [Directions](), count: input[0].count), count: input.count)
+            shine(beam: (x,y), direction: edge.direction)
+            var e = energy.reduce(into: 0, { $0 += $1.reduce(into: 0, { if $1 == "#" { $0 += 1 }})})
+            if e > maxEnergy {
+                maxEnergy = e
+            }
+        }
+    }
+}
+
+print(maxEnergy)
