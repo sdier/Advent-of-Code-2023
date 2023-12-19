@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import DequeModule
 
 let input = """
 2413432311323
@@ -23,7 +24,7 @@ let input = """
 4322674655533
 """.components(separatedBy: .newlines).map({Array($0)})
 
-enum Directions: Comparable {
+enum Directions: Int {
     case up
     case right
     case down
@@ -38,36 +39,28 @@ let directions : [Directions : Coordinate] = [
     .down : (x: 0, y:1),
     .left : (x: -1, y:0)]
 
-let fromTo : [Directions: Directions] = [
-    .up: .down,
-    .down: .up,
-    .left: .right,
-    .right: .left,
-]
-
 let allowed : [Directions: [Directions]] = [
-    .up: [.right, .up, .left],
+    .up: [.up, .right, .left],
     .down: [.down, .right, .left],
     .left: [.left, .down, .up],
     .right: [.right, .down, .up],
 ]
 
-var cache : [Int: Int] = [:]
+var cache : [String: Int] = [:]
 
-
-func minTraverse(start: Coordinate, end: Coordinate, estimate: Double) -> Int {
+func minTraverse(start: Coordinate, end: Coordinate, total: Int) -> Int {
+    var lastPrint = 0
     var cycles = 0
-    var stack : [(pos: Coordinate, lastDir: Directions?, sameDir: Int, loss: Int, seen: Set<Int>)] = []
-    stack.append((pos: start, lastDir: nil, sameDir: 0, loss: 0, seen: []))
+    var stack : Deque<(pos: Coordinate, lastDir: Directions?, sameDir: Int, loss: Int)> = []
+    stack.append((pos: start, lastDir: nil, sameDir: 0, loss: 0))
     var results : [Int] = []
     while stack.count != 0 {
-        // stack.sort(by: {Decimal($0.loss)/Decimal($0.seen.count) > Decimal($1.loss)/Decimal($1.seen.count)})
-        // stack.sort(by: {$0.seen.count > $1.seen.count})
-        stack.sort(by: { $0.loss > $1.loss })
-        //let (pos, lastDir, sameDir, loss, seen) = stack.popLast()!
-        //stack.shuffle()
-        let (pos, lastDir, sameDir, loss, seen) = stack.removeLast()
+        let (pos, lastDir, sameDir, loss) = stack.removeFirst()
         cycles += 1
+        if loss / 100 > lastPrint {
+            print("loss:", loss, "cycles:", cycles)
+            lastPrint = loss / 100
+        }
 
         if pos.x < 0 || pos.y < 0 || pos.x >= input[0].count || pos.y >= input.count {
             continue
@@ -75,66 +68,78 @@ func minTraverse(start: Coordinate, end: Coordinate, estimate: Double) -> Int {
 
         let posLoss = loss + Int(String(input[pos.y][pos.x]))!
         if lastDir != nil {
-            let cacheKey = (String(pos.y) + "-" + String(pos.x) + "-" + String(lastDir!.hashValue) + "-" + String(sameDir)).hashValue
+            let cacheKey = String(pos.y) + "-" + String(pos.x) + "-" + String(lastDir!.rawValue) + "-" + String(sameDir)
             if cache.keys.contains(cacheKey) && posLoss >= cache[cacheKey]! {
                 continue
             }
             cache[cacheKey] = posLoss
         }
 
-        if seen.count > 10 && Double(posLoss) > estimate * Double(seen.count + 1) {
+        if posLoss > total {
             continue
         }
 
-        if results.min() != nil && (loss + Int(String(input[pos.y][pos.x]))!) >= results.min()! {
+        if results.min() != nil && posLoss >= results.min()! {
             continue
         }
+
         if pos == end {
-            print(loss + Int(String(input[pos.y][pos.x]))!, results.min(), cycles)
-            results.append(loss + Int(String(input[pos.y][pos.x]))!)
+            if sameDir < 3 {
+                print("close", posLoss, results.min(), cycles)
+                continue
+            }
+            print("result", posLoss, results.min(), cycles)
+            results.append(posLoss)
         }
+
         var allowedDirs : [Directions] = []
-        if lastDir != nil {
+        var dirMult = 0
+
+        if lastDir != nil && sameDir < 3 {
+            allowedDirs.append(lastDir!)
+        } else if lastDir != nil {
             allowedDirs = allowed[lastDir!]!
+            if sameDir >= 9 {
+                allowedDirs.removeAll(where: {$0 == lastDir})
+            }
         } else {
             allowedDirs = [.right, .down]
         }
-        if sameDir >= 2 {
-            allowedDirs.removeAll(where: {$0 == lastDir})
-        }
-        //allowedDirs.shuffle()
 
         for dir in allowedDirs {
             var sd = sameDir
-            if dir == lastDir {
-                sd += 1
+            var sIdx = 0
+            if dir != lastDir || lastDir == nil {
+                sd = 3
+                dirMult = 3
             } else {
-                sd = 0
+                sd += 1
             }
-            let seenKey = (String(pos.y) + "-" + String(pos.x)).hashValue
-            if seen.contains(seenKey) {
+            if lastDir == nil {
+                sIdx = 1
+            }
+            let fPos : Coordinate = (x: pos.x + directions[dir]!.x * (dirMult + 1), y: pos.y + directions[dir]!.y * (dirMult + 1))
+            if fPos.x < 0 || fPos.y < 0 || fPos.x >= input[0].count || fPos.y >= input.count {
                 continue
             }
-            var s = Set(seen)
-            s.insert(seenKey)
-            stack.append((pos: (x: pos.x + directions[dir]!.x, y: pos.y + directions[dir]!.y),
+            var l = loss
+            for i in sIdx...dirMult {
+                let mPos : Coordinate = (x: pos.x + (directions[dir]!.x * i), y: pos.y + (directions[dir]!.y * i))
+                l += Int(String(input[mPos.y][mPos.x]))!
+            }
+            stack.append((pos: fPos,
                           lastDir: dir,
                           sameDir: sd,
-                          loss: loss + Int(String(input[pos.y][pos.x]))!,
-                          seen: s))
+                          loss: l))
         }
     }
     print(results)
+    print(cycles)
     return results.min()!
 }
 
 let end = Coordinate(x: input[0].count - 1, y: input.count - 1)
 let start = Coordinate(x: 0, y: 0)
-let estimate = Double(input.reduce(into: 0, {$0 += $1.reduce(into:0, {$0 += Int(String($1))!})})) / Double(input.count*input.count)
-print(estimate)
-
-let a = minTraverse(start: start, end: end, estimate: 5)
+print(start, end)
+let a = minTraverse(start: start, end: end, total: 1200)
 print(a)
-
-// 900 too low
-//

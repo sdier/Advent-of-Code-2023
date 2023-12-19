@@ -27,6 +27,7 @@
 		41C7BDD32B1B2B6E002A1F1B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C7BDD22B1B2B6E002A1F1B /* main.swift */; };
 		41C7BDDE2B1C8CCE002A1F1B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C7BDDD2B1C8CCE002A1F1B /* main.swift */; };
 		41CA14102B2FB667001AB9FB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CA140F2B2FB667001AB9FB /* main.swift */; };
+		41CA14152B311340001AB9FB /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = 41CA14142B311340001AB9FB /* DequeModule */; };
 		41CA9AEB2B1DD01F00268654 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CA9AEA2B1DD01F00268654 /* main.swift */; };
 		41CA9AF12B1DD34500268654 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 41CA9AF02B1DD34500268654 /* Algorithms */; };
 		41EBEB6D2B1AA28C00D2E9A3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EBEB6C2B1AA28C00D2E9A3 /* main.swift */; };
@@ -333,6 +334,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41CA14152B311340001AB9FB /* DequeModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -817,6 +819,9 @@
 			dependencies = (
 			);
 			name = "Day 17";
+			packageProductDependencies = (
+				41CA14142B311340001AB9FB /* DequeModule */,
+			);
 			productName = "Day 17";
 			productReference = 41CA140D2B2FB667001AB9FB /* Day 17 */;
 			productType = "com.apple.product-type.tool";
@@ -1801,6 +1806,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4198457F2B2D0F21000E5AA9 /* XCRemoteSwiftPackageReference "swift-collections" */;
 			productName = OrderedCollections;
+		};
+		41CA14142B311340001AB9FB /* DequeModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4198457F2B2D0F21000E5AA9 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = DequeModule;
 		};
 		41CA9AF02B1DD34500268654 /* Algorithms */ = {
 			isa = XCSwiftPackageProductDependency;

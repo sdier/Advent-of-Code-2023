@@ -7,116 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "66356554-AC0F-4D01-A930-7CDA1EEB6B6E"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Day 17/main.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
-            landmarkName = "minTraverse(start:end:estimate:)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "18DE6EBA-65CE-4178-A2A2-9CBC104D1116"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Day 17/main.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "minTraverse(start:end:estimate:)"
-            landmarkType = "9">
-            <Locations>
-               <Location
-                  uuid = "18DE6EBA-65CE-4178-A2A2-9CBC104D1116 - 932c7c0988428a1d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Day_17.minTraverse(start: (x: Swift.Int, y: Swift.Int), end: (x: Swift.Int, y: Swift.Int)) -&gt; Swift.Int"
-                  moduleName = "Day 17"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sdier/Documents/Advent%20of%20Code/2023/Advent%20of%20Code%202023/Day%2017/main.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "205"
-                  endingLineNumber = "205"
-                  offsetFromSymbolStart = "3028">
-               </Location>
-               <Location
-                  uuid = "18DE6EBA-65CE-4178-A2A2-9CBC104D1116 - 932c7c0988428a1d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Day_17.minTraverse(start: (x: Swift.Int, y: Swift.Int), end: (x: Swift.Int, y: Swift.Int)) -&gt; Swift.Int"
-                  moduleName = "Day 17"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sdier/Documents/Advent%20of%20Code/2023/Advent%20of%20Code%202023/Day%2017/main.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "205"
-                  endingLineNumber = "205"
-                  offsetFromSymbolStart = "3012">
-               </Location>
-               <Location
-                  uuid = "18DE6EBA-65CE-4178-A2A2-9CBC104D1116 - 80ebf1c804e90af4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Day_17.minTraverse(start: (x: Swift.Int, y: Swift.Int), end: (x: Swift.Int, y: Swift.Int), estimate: __C.NSDecimal) -&gt; Swift.Int"
-                  moduleName = "Day 17"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sdier/Documents/Advent%20of%20Code/2023/Advent%20of%20Code%202023/Day%2017/main.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "207"
-                  endingLineNumber = "207"
-                  offsetFromSymbolStart = "2936">
-               </Location>
-               <Location
-                  uuid = "18DE6EBA-65CE-4178-A2A2-9CBC104D1116 - aefa2d5b5aa0373f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Day_17.minTraverse(start: (x: Swift.Int, y: Swift.Int), end: (x: Swift.Int, y: Swift.Int), estimate: Swift.Double) -&gt; Swift.Int"
-                  moduleName = "Day 17"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sdier/Documents/Advent%20of%20Code/2023/Advent%20of%20Code%202023/Day%2017/main.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "209"
-                  endingLineNumber = "209"
-                  offsetFromSymbolStart = "2716">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "98C393C0-F0A8-4F11-A2F0-B1E7554558AB"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Day 17/main.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "minTraverse(start:end:estimate:)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "A5518A97-DC22-48CC-9F00-7FCB680C61E8"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -124,9 +14,9 @@
             filePath = "Day 17/main.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "minTraverse(start:end:estimate:)"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "minTraverse(start:end:total:)"
             landmarkType = "9">
             <Locations>
                <Location
@@ -159,23 +49,37 @@
                   endingLineNumber = "204"
                   offsetFromSymbolStart = "1104">
                </Location>
+               <Location
+                  uuid = "A5518A97-DC22-48CC-9F00-7FCB680C61E8 - aefa2d5b5aa03675"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Day_17.minTraverse(start: (x: Swift.Int, y: Swift.Int), end: (x: Swift.Int, y: Swift.Int), estimate: Swift.Double) -&gt; Swift.Int"
+                  moduleName = "Day 17"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sdier/Documents/Advent%20of%20Code/2023/Advent%20of%20Code%202023/Day%2017/main.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "203"
+                  endingLineNumber = "203"
+                  offsetFromSymbolStart = "1104">
+               </Location>
+               <Location
+                  uuid = "A5518A97-DC22-48CC-9F00-7FCB680C61E8 - 4d66b4cbee1467e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Day_17.minTraverse(start: (x: Swift.Int, y: Swift.Int), end: (x: Swift.Int, y: Swift.Int), min: Swift.Double, max: Swift.Double) -&gt; Swift.Int"
+                  moduleName = "Day 17"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sdier/Documents/Advent%20of%20Code/2023/Advent%20of%20Code%202023/Day%2017/main.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "203"
+                  endingLineNumber = "203"
+                  offsetFromSymbolStart = "1028">
+               </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8BBEF4D7-C54B-478C-901A-0E5D8105C865"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Day 17/main.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
-            landmarkName = "minTraverse(start:end:estimate:)"
-            landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -188,25 +92,57 @@
             filePath = "Day 17/main.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
-            landmarkName = "minTraverse(start:end:estimate:)"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "minTraverse(start:end:total:)"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6FD74EFA-2A68-4663-BD28-80F4A03C968F"
+            uuid = "3E5B0C69-1E91-45C7-914D-0218059DB8C3"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Day 17/main.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "minTraverse(start:end:estimate:)"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
+            landmarkName = "minTraverse(start:end:total:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B9B8704D-B95B-4027-9168-88F75DEF39AB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Day 17/main.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
+            landmarkName = "minTraverse(start:end:total:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "26172D6F-88F8-40A3-9261-B4366F5ED5B1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Day 17/main.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "minTraverse(start:end:total:)"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
