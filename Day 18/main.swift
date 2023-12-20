@@ -40,61 +40,72 @@ let directions : [Directions : Coordinate] = [
     .left : (x: -1, y:0)]
 
 let cmd2dir : [String: Directions] = [
-    "R" : .right,
-    "D" : .down,
-    "L" : .left,
-    "U" : .up
+    "0" : .right,
+    "1" : .down,
+    "2" : .left,
+    "3" : .up
     ]
 
 
-var map : [Int: [Int: (color: String, from: Directions, to: Directions?)]] = [:]
+var map : [Int: [Int: (from: Directions, to: Directions?)]] = [:]
 var pos : Coordinate = (0,0)
+var firstDir : Directions? = nil
 
 for instruction in input {
-    let dir = cmd2dir[instruction[0]]!
+    var hex = instruction[2].trimmingCharacters(in: CharacterSet(["(", ")", "#"]))
+    let dir = cmd2dir[String(hex.popLast()!)]!
     let c = directions[dir]!
-    let num = Int(instruction[1])!
-    let color = instruction[2].trimmingCharacters(in: CharacterSet(["(", ")"]))
+    let num = Int(hex, radix: 16)!
+    print(num, hex)
 
+    // for right/left only write last entry and first to
     for _ in 0..<num {
         if map.keys.contains(pos.y) && map[pos.y]!.keys.contains(pos.x) {
-            map[pos.y]![pos.x]!.to = dir
+            if (dir == .left || dir == .right) && map[pos.y]![pos.x]!.to == dir {
+                map[pos.y]!.removeValue(forKey: pos.x)
+            } else {
+                map[pos.y]![pos.x]!.to = dir
+            }
         }
         pos = (x: pos.x + c.x, y: pos.y + c.y)
-        map[pos.y, default: [:]][pos.x] = (color, from: dir, to: nil)
+        map[pos.y, default: [:]][pos.x] = (from: dir, to: nil)
     }
 }
 
-map[0]![0]!.to = cmd2dir[input[0][0]]
+map[0]![0]!.to = cmd2dir[String(input[0][2].trimmingCharacters(in: CharacterSet(["(", ")", "#"])).last!)]!
 
 var contains = 0
 for i in map.keys.sorted() {
     let line = map[i]!
-    let min = line.keys.min()!
-    let max = line.keys.max()!
     var inside = false
     var lineTotal = 0
-    for j in min...max {
-        if !line.keys.contains(j) {
-            if inside {
-                lineTotal += 1
-            }
-        } else {
-            let from = line[j]!.from
-            let to = line[j]!.to
-            let same = (from == to)
-            if same {
-                if from == .up || from == .down {
-                    inside.toggle()
+    var lastToggle : Int? = nil
+    for seg in line.sorted(by: {$0.key < $1.key}) {
+        // convert to work on elements rather than from min to max
+        // keep last inside toggle #
+        // add difference when toggle off or at end
+        let from = seg.value.from
+        let to = seg.value.to
+        let same = (from == to)
+        if same {
+            if from == .up || from == .down {
+                if inside {
+                    lineTotal += seg.key - lastToggle! - 1
                 }
+                inside.toggle()
+                lastToggle = seg.key
             }
-            else {
-                if((from == .right && to == .up) ||
-                   (from == .down && to == .right) ||
-                   (from == .up && to == .left) ||
-                   (from == .left && to == .down)) {
-                    inside.toggle()
+        }
+        else {
+            if((from == .right && to == .up) ||
+               (from == .down && to == .right) ||
+               (from == .up && to == .left) ||
+               (from == .left && to == .down)) {
+                if inside {
+                    lineTotal += seg.key - lastToggle! - 1
                 }
+                inside.toggle()
+                lastToggle = seg.key
             }
         }
     }
