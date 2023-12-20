@@ -106,3 +106,41 @@ nextWkf: while true {
 }
 
 print(accepted)
+
+typealias pRange = [ClosedRange<Int>]
+
+func inline(_ opcode: [Op], range: pRange?) -> [pRange] {
+    var r = range
+    if r == nil {
+        r = Array(repeating: 1...4000, count: 4)
+    }
+    var o : [pRange] = []
+nextOp:
+    for op in opcode {
+        var nR = r
+        if op.op != .none {
+            switch op.op {
+            case .gt:
+                nR![r2a[op.reg]!] = op.cmp!+1...r![r2a[op.reg]!].last!
+                r![r2a[op.reg]!] = r![r2a[op.reg]!].first!...op.cmp!
+            case .lt:
+                nR![r2a[op.reg]!] = r![r2a[op.reg]!].first!...op.cmp!-1
+                r![r2a[op.reg]!] = op.cmp!...r![r2a[op.reg]!].last!
+            default:
+                break
+            }
+        }
+        if op.jmp != "R" && op.jmp != "A" {
+            o.append(contentsOf: inline(instructions[op.jmp]!, range: nR!))
+            continue nextOp
+        } else if op.jmp == "A" {
+            o.append(nR!)
+        }
+    }
+    return o
+}
+
+let inlined = inline(instructions["in"]!, range: nil)
+print(inlined.count, inlined.reduce(into: 0, { $0 += $1.reduce(into: 1, {$0 *= $1.count})}))
+
+
