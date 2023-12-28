@@ -17,6 +17,7 @@
 		4131F01E2B33B3A50091FEAE /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = 4131F01D2B33B3A50091FEAE /* DequeModule */; };
 		4131F0262B37865F0091FEAE /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4131F0252B37865F0091FEAE /* main.swift */; };
 		4131F02B2B3799F40091FEAE /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = 4131F02A2B3799F40091FEAE /* DequeModule */; };
+		4131F02E2B385AA70091FEAE /* MemoZ in Frameworks */ = {isa = PBXBuildFile; productRef = 4131F02D2B385AA70091FEAE /* MemoZ */; };
 		417964452B201C8C0098A8E9 /* SE0270_RangeSet in Frameworks */ = {isa = PBXBuildFile; productRef = 417964442B201C8C0098A8E9 /* SE0270_RangeSet */; };
 		4193EDCD2B2387CE00C8D67A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4193EDCC2B2387CE00C8D67A /* main.swift */; };
 		4193EDD22B23891D00C8D67A /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 4193EDD12B23891D00C8D67A /* Algorithms */; };
@@ -328,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4131F02B2B3799F40091FEAE /* DequeModule in Frameworks */,
+				4131F02E2B385AA70091FEAE /* MemoZ in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -799,6 +801,7 @@
 			name = "Day 21";
 			packageProductDependencies = (
 				4131F02A2B3799F40091FEAE /* DequeModule */,
+				4131F02D2B385AA70091FEAE /* MemoZ */,
 			);
 			productName = "Day 21";
 			productReference = 4131F0232B37865F0091FEAE /* Day 21 */;
@@ -1150,6 +1153,7 @@
 				417964432B201C8C0098A8E9 /* XCRemoteSwiftPackageReference "swift-se0270-range-set" */,
 				4193EDE92B24E2AD00C8D67A /* XCRemoteSwiftPackageReference "Euler" */,
 				4198457F2B2D0F21000E5AA9 /* XCRemoteSwiftPackageReference "swift-collections" */,
+				4131F02C2B385AA70091FEAE /* XCRemoteSwiftPackageReference "MemoZ" */,
 			);
 			productRefGroup = 41EBEB5C2B1AA1CC00D2E9A3 /* Products */;
 			projectDirPath = "";
@@ -2100,6 +2104,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4131F02C2B385AA70091FEAE /* XCRemoteSwiftPackageReference "MemoZ" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marcprux/MemoZ";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.2;
+			};
+		};
 		416B50CD2B1CF21000C39077 /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-algorithms.git";
@@ -2157,6 +2169,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4198457F2B2D0F21000E5AA9 /* XCRemoteSwiftPackageReference "swift-collections" */;
 			productName = DequeModule;
+		};
+		4131F02D2B385AA70091FEAE /* MemoZ */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4131F02C2B385AA70091FEAE /* XCRemoteSwiftPackageReference "MemoZ" */;
+			productName = MemoZ;
 		};
 		417964442B201C8C0098A8E9 /* SE0270_RangeSet */ = {
 			isa = XCSwiftPackageProductDependency;

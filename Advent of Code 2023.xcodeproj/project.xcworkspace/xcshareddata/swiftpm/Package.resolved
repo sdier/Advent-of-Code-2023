@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "memoz",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/marcprux/MemoZ",
+      "state" : {
+        "revision" : "473ee3559b4446fb81c7197fb01293373ddf6b4a",
+        "version" : "1.5.2"
+      }
+    },
+    {
       "identity" : "swift-algorithms",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-algorithms.git",
